@@ -53,9 +53,7 @@ function guardarPersona() {
         }
     }).then((response)=>response.json())
     .then((responseJson)=> console.log(responseJson))
-
-    alert("Registro correcto, revisar consola")
-    
+    .then(alert("Registro correcto, revisar consola"))
 
 
 }
