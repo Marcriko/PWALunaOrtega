@@ -24,6 +24,7 @@ function tabla() {
 
 }
 function guardarPersona() {
+    
     let nombre = document.getElementById("firstName").value
     let apellido = document.getElementById("lastName").value
     let correo = document.getElementById("email").value
@@ -44,8 +45,17 @@ function guardarPersona() {
     document.getElementById("firstName").value =""
     document.getElementById("lastName").value=""
     document.getElementById("email").value=""
+    fetch("https://reqres.in/api/users",{
+        method:"POST",
+        body:{
+            name:nombre,
+            job:email
+        }
+    }).then((response)=>response.json())
+    .then((responseJson)=> console.log(responseJson))
 
-    alert("Registro correcto")
+    alert("Registro correcto, revisar consola")
+    
 
 
 }
